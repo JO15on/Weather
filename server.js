@@ -3,6 +3,9 @@ const request = require('request');
 const cors = require('cors');
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`listening on ${PORT}`));
+
 app.use(express.json());
 app.use(cors());
 
@@ -19,5 +22,3 @@ app.get('', (req, res) => {
     )
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`listening on ${PORT}`));
